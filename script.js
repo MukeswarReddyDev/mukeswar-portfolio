@@ -200,18 +200,26 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Simulate API submit
+      // Construct mailto URL to send a direct email
+      const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+      const mailtoUrl = `mailto:bmukeswarreddy@gmail.com?subject=${subject}&body=${body}`;
+
+      // Simulate API submit animation
       if (submitBtn) {
         const originalBtnText = submitBtn.innerHTML;
         submitBtn.disabled = true;
         submitBtn.innerHTML = `<svg class="w-5 h-5 animate-spin mr-2 inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-opacity="0.25"></circle><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke-linecap="round"></path></svg> Sending...`;
         
         setTimeout(() => {
+          // Open visitor's default email client
+          window.location.href = mailtoUrl;
+          
           showToast(toastSuccess);
           contactForm.reset();
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalBtnText;
-        }, 1500);
+        }, 1200);
       }
     });
   }
