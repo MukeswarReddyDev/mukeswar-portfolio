@@ -165,6 +165,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- 5.1 Gmail Link Fallback Copying ---
+  const gmailLinks = document.querySelectorAll('.gmail-link');
+  gmailLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      // Do NOT call e.preventDefault() so the mailto: link still attempts to run!
+      const email = "bmukeswarreddy@gmail.com";
+      
+      navigator.clipboard.writeText(email).then(() => {
+        const toastTitle = toastSuccess?.querySelector('h6');
+        const toastText = toastSuccess?.querySelector('p');
+        
+        if (toastTitle && toastText) {
+          const originalTitle = toastTitle.textContent;
+          const originalText = toastText.textContent;
+          
+          toastTitle.textContent = "Email Address Copied!";
+          toastText.textContent = "bmukeswarreddy@gmail.com has been copied to your clipboard.";
+          
+          showToast(toastSuccess);
+          
+          setTimeout(() => {
+            toastTitle.textContent = originalTitle;
+            toastText.textContent = originalText;
+          }, 4500);
+        }
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+      });
+    });
+  });
+
   // --- 6. Contact Form Simulation & Toast Alert ---
   const contactForm = document.getElementById('contact-form');
   const toastSuccess = document.getElementById('toast-success');
