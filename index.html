@@ -1,0 +1,1111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bandlapalli Mukeswar Reddy | Java Full-Stack Developer Portfolio</title>
+    <meta name="description" content="Bandlapalli Mukeswar Reddy - Java Full-Stack Developer with hands-on experience in Spring Boot, Java Servlets, JSP, JDBC, REST APIs, MySQL, and MVC + DAO Architecture. View my projects, skills, and experience.">
+    <meta name="author" content="Bandlapalli Mukeswar Reddy" />
+    <meta name="keywords" content="Bandlapalli Mukeswar Reddy, Mukeswar Reddy, Java Full-Stack Developer, Spring Boot, Hibernate, Java Servlets, JSP, JDBC, REST APIs, MySQL, MVC, DAO, Tap Academy, Portfolio">
+
+    <!-- Open Graph / Social Media Metas -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Bandlapalli Mukeswar Reddy | Java Full-Stack Developer Portfolio">
+    <meta property="og:description" content="Java Developer with hands-on experience in Spring Boot, Spring Data JPA, Hibernate, REST APIs, Java Servlets, JSP, JDBC, and MySQL. NPTEL Silver Medalist in ML and IoT (IIT Madras).">
+    <meta property="og:image" content="av/p1.jpg">
+
+    <!-- CSS stylesheet & Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#06b6d4',      /* Cyan */
+              secondary: '#6366f1',    /* Indigo */
+              accent: '#d946ef',       /* Fuchsia */
+              background: '#030712',   /* Dark Slate */
+              'glass-border': 'rgba(255, 255, 255, 0.05)',
+              muted: {
+                DEFAULT: '#1f2937',
+                foreground: '#9ca3af',
+              }
+            },
+            boxShadow: {
+              'glow': '0 0 15px 1px rgba(6, 182, 212, 0.15)',
+              'glow-lg': '0 0 30px 4px rgba(99, 102, 241, 0.35)',
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="style.css" />
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+
+  <body class="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <!-- Background mesh glows -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-glow"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse-glow"></div>
+      <div class="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.02)_1px,transparent_1px)] bg-[size:80px_80px]"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-nav">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 lg:h-20">
+          <div class="flex-shrink-0">
+            <a href="#home" class="text-xl font-extrabold tracking-wider bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent uppercase">
+              MUKESWAR
+            </a>
+          </div>
+          
+          <!-- Desktop Navigation -->
+          <div class="hidden lg:flex items-center space-x-8">
+            <a href="#home" class="nav-link text-primary transition-colors duration-300 text-sm font-medium relative group">Home</a>
+            <a href="#about" class="nav-link text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium relative group">About</a>
+            <a href="#skills" class="nav-link text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium relative group">Skills</a>
+            <a href="#experience" class="nav-link text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium relative group">Experience</a>
+            <a href="#projects" class="nav-link text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium relative group">Projects</a>
+            <a href="#education" class="nav-link text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium relative group">Education</a>
+            <a href="#certifications" class="nav-link text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium relative group">Certifications</a>
+            <a href="#contact" class="nav-link text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium relative group">Contact</a>
+          </div>
+
+          <!-- Resume CTA -->
+          <div class="hidden lg:block">
+            <a href="./MukeswarReddy_Resume.pdf" target="_blank" download="Bandlapalli_Mukeswar_Reddy_Resume.pdf" class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-lg font-medium text-sm hover-shadow-glow transition-all duration-300">
+              <i data-lucide="download" class="w-4 h-4"></i> Resume
+            </a>
+          </div>
+
+          <!-- Mobile menu toggle -->
+          <button id="menu-toggle" class="lg:hidden p-2 text-foreground hover:text-primary transition-colors" aria-label="Toggle menu">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu drawer -->
+      <div id="mobile-menu" class="hidden lg:hidden glass border-t border-glass-border">
+        <div class="container mx-auto px-4 py-4 space-y-3">
+          <a href="#home" class="block text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium py-2">Home</a>
+          <a href="#about" class="block text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium py-2">About</a>
+          <a href="#skills" class="block text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium py-2">Skills</a>
+          <a href="#experience" class="block text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium py-2">Experience</a>
+          <a href="#projects" class="block text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium py-2">Projects</a>
+          <a href="#education" class="block text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium py-2">Education</a>
+          <a href="#certifications" class="block text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium py-2">Certifications</a>
+          <a href="#contact" class="block text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium py-2">Contact</a>
+          <a href="./MukeswarReddy_Resume.pdf" target="_blank" download="Bandlapalli_Mukeswar_Reddy_Resume.pdf" class="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-lg font-medium text-sm">
+            <i data-lucide="download" class="w-4 h-4"></i> Resume
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="relative z-10">
+      
+      <!-- HERO SECTION -->
+      <section id="home" class="relative min-h-screen flex items-center justify-center pt-36 lg:pt-32">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
+            
+            <!-- Hero content -->
+            <div class="flex-1 text-center lg:text-left order-2 lg:order-1">
+              <div class="inline-flex items-center gap-2 px-4 py-2 glass rounded-full mb-6">
+                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                <span class="text-xs text-muted-foreground uppercase tracking-wider font-semibold">Open to Opportunities &bull; Software & Java Roles</span>
+              </div>
+              
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 tracking-tight leading-none text-white">
+                Hi, I'm <br class="hidden sm:inline" />
+                <span class="gradient-text glow-text font-black">Mukeswar Reddy</span>
+              </h1>
+              
+              <div class="text-xl sm:text-2xl lg:text-3xl font-semibold text-muted-foreground mb-6 h-10">
+                I am a <span id="typing-text" class="typing-cursor text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary"></span>
+              </div>
+              
+              <p class="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+                Java Developer fresher with hands-on experience developing REST API applications using Core Java, Spring Boot, Spring Data JPA, Hibernate and MySQL. Strong understanding of OOPS concepts, Collections, database operations, JWT authentication and role-based authorization. Interested in building secure and maintainable backend applications.
+              </p>
+              
+              <!-- Quick Contact Details -->
+              <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-8 text-sm text-muted-foreground">
+                <div class="flex items-center gap-2 px-3 py-1.5 glass rounded-lg cursor-pointer hover:text-white transition-colors relative group" data-copy-value="bmukeswarreddy@gmail.com" data-copy-label="Email Copied!">
+                  <!-- SVG Mail -->
+                  <svg class="w-4 h-4 text-primary fill-none stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                  <span>bmukeswarreddy@gmail.com</span>
+                  <span class="tooltip-text absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-black text-xs text-white rounded opacity-0 pointer-events-none transition-opacity duration-300 group-hover:opacity-100 whitespace-nowrap">Click to Copy</span>
+                </div>
+                
+                <div class="flex items-center gap-2 px-3 py-1.5 glass rounded-lg hover:text-white transition-colors">
+                  <!-- SVG Phone -->
+                  <svg class="w-4 h-4 text-primary fill-none stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                  <a href="tel:+919014181282" class="hover:underline">+91 9014181282</a>
+                </div>
+                
+                <div class="flex items-center gap-2 px-3 py-1.5 glass rounded-lg">
+                  <!-- SVG Map-pin -->
+                  <svg class="w-4 h-4 text-primary fill-none stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                  </svg>
+                  <span>Tirupati, AP, India</span>
+                </div>
+              </div>
+
+              <!-- Social Links & Action -->
+              <div class="flex items-center justify-center lg:justify-start gap-4">
+                <a href="#contact" class="px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-xl font-semibold hover-shadow-glow transition-all duration-300">
+                  Hire Me
+                </a>
+                
+                <a href="./MukeswarReddy_Resume.pdf" target="_blank" download="Bandlapalli_Mukeswar_Reddy_Resume.pdf" class="px-5 py-3 glass hover:border-primary/50 text-white rounded-xl font-semibold transition-all duration-300 flex items-center gap-2">
+                  <i data-lucide="file-text" class="w-4 h-4 text-primary"></i> View Resume
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/MukeswarReddyDev" target="_blank" rel="noopener noreferrer" class="p-3 glass-hover rounded-xl hover:shadow-glow transition-all duration-300 group" aria-label="GitHub">
+                  <svg class="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/>
+                  </svg>
+                </a>
+                
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/bandlapalli-mukeswar-reddy" target="_blank" rel="noopener noreferrer" class="p-3 glass-hover rounded-xl hover:shadow-glow transition-all duration-300 group" aria-label="LinkedIn">
+                  <svg class="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                </a>
+
+                <!-- Gmail -->
+                <a href="mailto:bmukeswarreddy@gmail.com" class="p-3 glass-hover rounded-xl hover:shadow-glow transition-all duration-300 group" aria-label="Gmail">
+                  <svg class="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 5.457v13.909c0 .904-.732 1.634-1.636 1.634h-3.818V11.73L12 16.64l-6.545-4.91v9.27H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-1.356 1.478-2.194 2.619-1.455l9.381 6.25 9.381-6.25c1.14-.739 2.619.099 2.619 1.455z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Hero avatar -->
+            <div class="flex-1 flex justify-center order-1 lg:order-2">
+              <div class="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full">
+                <!-- Glowing border pulse -->
+                <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full blur-xl opacity-40 animate-pulse-glow"></div>
+                <!-- Frame -->
+                <div class="relative w-full h-full p-1.5 rounded-full bg-gradient-to-r from-primary via-secondary to-accent">
+                  <div class="w-full h-full rounded-full overflow-hidden bg-background">
+                    <img src="av/p1.jpg" alt="Mukeswar Reddy" class="w-full h-full object-cover object-top animate-float" />
+                  </div>
+                </div>
+                
+                <!-- Floating tags -->
+                <div class="absolute -top-4 -right-4 px-4 py-2 glass rounded-lg text-sm font-mono text-primary flex items-center gap-1.5 animate-float" style="animation-delay: -1s;">
+                  <i data-lucide="code" class="w-4 h-4"></i> Java Full Stack
+                </div>
+                <div class="absolute -bottom-4 -left-4 px-4 py-2 glass rounded-lg text-sm font-mono text-secondary flex items-center gap-1.5 animate-float" style="animation-delay: -2s;">
+                  <i data-lucide="database" class="w-4 h-4"></i> Spring Boot & MySQL
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT ME SECTION -->
+      <section id="about" class="py-20 lg:py-32 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-muted/10 to-transparent pointer-events-none"></div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+          
+          <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-white">About Me</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+          </div>
+
+          <div class="max-w-5xl mx-auto">
+            <!-- Top: Bio text (Full Width) -->
+            <div class="glass p-6 lg:p-8 rounded-2xl border-gradient mb-8">
+              <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2">
+                <svg class="w-5 h-5 text-primary fill-none stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                </svg> Professional Overview
+              </h3>
+              <p class="text-muted-foreground leading-relaxed mb-5 text-sm sm:text-base">
+                I am a <strong class="text-white">Java Developer fresher</strong> with hands-on experience developing REST API applications using <strong class="text-white">Core Java, Spring Boot, Spring Data JPA, Hibernate, and MySQL</strong>. I bring a strong understanding of <strong class="text-primary">OOPS concepts, Collections, database operations, JWT authentication, and role-based authorization</strong>.
+              </p>
+              <p class="text-muted-foreground leading-relaxed mb-5 text-sm sm:text-base">
+                Having completed an intensive <strong class="text-white">Software Developer Internship</strong> at <strong class="text-primary">Tap Academy, Bengaluru (Dec 2025 – Aug 2026)</strong>, I developed Java web applications applying MVC architecture, practiced Spring Boot, Spring MVC, Spring Data JPA, and Hibernate to engineer secure REST APIs and database-driven applications, using Maven, Git, Postman, and Swagger/OpenAPI for project management, version control, and API testing.
+              </p>
+              <p class="text-muted-foreground leading-relaxed text-sm sm:text-base">
+                I hold a <strong class="text-white">B.Tech in Electronics & Communication Engineering</strong> from Chadalawada Ramanamma Engineering College with an <strong class="text-white">8.5 CGPA</strong>, and I am a recognized <strong class="text-primary">National Level NPTEL Silver Medalist</strong> in Machine Learning & IoT from <strong class="text-white">IIT Madras</strong>. Deeply interested in building secure, reliable, and maintainable backend applications.
+              </p>
+            </div>
+
+            <!-- Downside: Completed Role, Education, and Target Role in a 3-column grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <!-- Completed Role Card -->
+              <div class="glass-hover p-6 rounded-2xl border border-glass-border flex flex-col justify-between">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center flex-shrink-0 text-primary">
+                    <svg class="w-6 h-6 fill-none stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                      <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="text-xs text-muted-foreground uppercase tracking-wider font-semibold block mb-1">Internship Experience</span>
+                    <h4 class="font-bold text-white text-base">Software Developer Intern</h4>
+                    <p class="text-xs text-primary font-medium mt-0.5">Tap Academy &bull; Bengaluru (Dec 2025 - Aug 2026 &bull; Completed)</p>
+                  </div>
+                </div>
+                <p class="text-xs text-muted-foreground mt-4 leading-relaxed">
+                  Successfully completed internship developing Java web applications using Core Java, OOP, JDBC, Servlets, JSP and MySQL. Practiced Spring Boot, Spring MVC, Spring Data JPA and Hibernate to build REST APIs and database-driven applications.
+                </p>
+              </div>
+
+              <!-- Education Card -->
+              <div class="glass-hover p-6 rounded-2xl border border-glass-border flex flex-col justify-between">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center flex-shrink-0 text-primary">
+                    <svg class="w-6 h-6 fill-none stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="text-xs text-muted-foreground uppercase tracking-wider font-semibold block mb-1">Education</span>
+                    <h4 class="font-bold text-white text-base">B.Tech ECE (8.5 CGPA)</h4>
+                    <p class="text-xs text-primary font-medium mt-0.5">CREC, Tirupati (Sep 2023 - Apr 2026)</p>
+                  </div>
+                </div>
+                <p class="text-xs text-muted-foreground mt-4 leading-relaxed">
+                  B.Tech in ECE with 8.5 CGPA; Diploma with 94%; SSC with 97.5%. National NPTEL Silver Medalist in ML & IoT (IIT Madras).
+                </p>
+              </div>
+
+              <!-- Target Role Card -->
+              <div class="glass-hover p-6 rounded-2xl border border-glass-border flex flex-col justify-between">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center flex-shrink-0 text-primary">
+                    <svg class="w-6 h-6 fill-none stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                      <circle cx="12" cy="8" r="7"/><polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="text-xs text-muted-foreground uppercase tracking-wider font-semibold block mb-1">Career Goal</span>
+                    <h4 class="font-bold text-white text-base">Java Backend Developer</h4>
+                    <p class="text-xs text-primary font-medium mt-0.5">Ready for Opportunities</p>
+                  </div>
+                </div>
+                <p class="text-xs text-muted-foreground mt-4 leading-relaxed">
+                  Passionate about building secure, scalable REST APIs using Spring Boot, Spring Security, JWT, and Hibernate. Ready to contribute immediately to engineering teams.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SKILLS SECTION -->
+      <section id="skills" class="py-20 lg:py-32 relative">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-white">Technical Skills</h2>
+            <p class="text-muted-foreground mt-2 max-w-2xl mx-auto text-sm sm:text-base">
+              Core technologies, architectural patterns, and engineering tools I leverage to build scalable software
+            </p>
+            <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mt-4"></div>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Backend & Architecture -->
+            <div class="glass-hover p-6 rounded-2xl border border-glass-border">
+              <div class="flex items-center gap-4 mb-5">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white">
+                  <svg class="w-5 h-5 fill-none stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                </div>
+                <h3 class="text-lg font-semibold text-white">Backend Technologies</h3>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-secondary/20 text-muted-foreground hover:text-secondary rounded-lg transition-all duration-300 cursor-default">Java</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-secondary/20 text-muted-foreground hover:text-secondary rounded-lg transition-all duration-300 cursor-default">Spring Boot</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-secondary/20 text-muted-foreground hover:text-secondary rounded-lg transition-all duration-300 cursor-default">Spring MVC</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-secondary/20 text-muted-foreground hover:text-secondary rounded-lg transition-all duration-300 cursor-default">Spring Data JPA</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-secondary/20 text-muted-foreground hover:text-secondary rounded-lg transition-all duration-300 cursor-default">Spring Security</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-secondary/20 text-muted-foreground hover:text-secondary rounded-lg transition-all duration-300 cursor-default">JWT Authentication</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-secondary/20 text-muted-foreground hover:text-secondary rounded-lg transition-all duration-300 cursor-default">Hibernate</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-secondary/20 text-muted-foreground hover:text-secondary rounded-lg transition-all duration-300 cursor-default">REST APIs</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-secondary/20 text-muted-foreground hover:text-secondary rounded-lg transition-all duration-300 cursor-default">JDBC</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-secondary/20 text-muted-foreground hover:text-secondary rounded-lg transition-all duration-300 cursor-default">Java Servlets &amp; JSP</span>
+              </div>
+            </div>
+
+            <!-- Database -->
+            <div class="glass-hover p-6 rounded-2xl border border-glass-border">
+              <div class="flex items-center gap-4 mb-5">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center text-white">
+                  <svg class="w-5 h-5 fill-none stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5V19A9 3 0 0 0 21 19V5"></path><path d="M3 12A9 3 0 0 0 21 12"></path></svg>
+                </div>
+                <h3 class="text-lg font-semibold text-white">Database Management</h3>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-emerald-500/20 text-muted-foreground hover:text-emerald-400 rounded-lg transition-all duration-300 cursor-default">MySQL</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-emerald-500/20 text-muted-foreground hover:text-emerald-400 rounded-lg transition-all duration-300 cursor-default">Relational Schemas</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-emerald-500/20 text-muted-foreground hover:text-emerald-400 rounded-lg transition-all duration-300 cursor-default">Indexing</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-emerald-500/20 text-muted-foreground hover:text-emerald-400 rounded-lg transition-all duration-300 cursor-default">JOIN Optimization</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-emerald-500/20 text-muted-foreground hover:text-emerald-400 rounded-lg transition-all duration-300 cursor-default">Query Performance Tuning</span>
+              </div>
+            </div>
+
+            <!-- CS Concepts -->
+            <div class="glass-hover p-6 rounded-2xl border border-glass-border">
+              <div class="flex items-center gap-4 mb-5">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white">
+                  <svg class="w-5 h-5 fill-none stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <h3 class="text-lg font-semibold text-white">CS Concepts</h3>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-blue-500/20 text-muted-foreground hover:text-blue-400 rounded-lg transition-all duration-300 cursor-default">OOP Principles</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-blue-500/20 text-muted-foreground hover:text-blue-400 rounded-lg transition-all duration-300 cursor-default">Data Structures &amp; Algorithms</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-blue-500/20 text-muted-foreground hover:text-blue-400 rounded-lg transition-all duration-300 cursor-default">Collections Framework</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-blue-500/20 text-muted-foreground hover:text-blue-400 rounded-lg transition-all duration-300 cursor-default">Exception Handling</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-blue-500/20 text-muted-foreground hover:text-blue-400 rounded-lg transition-all duration-300 cursor-default">Encapsulation &amp; Abstraction</span>
+              </div>
+            </div>
+
+            <!-- Web & Frontend -->
+            <div class="glass-hover p-6 rounded-2xl border border-glass-border">
+              <div class="flex items-center gap-4 mb-5">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-white">
+                  <svg class="w-5 h-5 fill-none stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                </div>
+                <h3 class="text-lg font-semibold text-white">Web &amp; Frontend</h3>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-primary/20 text-muted-foreground hover:text-primary rounded-lg transition-all duration-300 cursor-default">HTML5</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-primary/20 text-muted-foreground hover:text-primary rounded-lg transition-all duration-300 cursor-default">CSS3</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-primary/20 text-muted-foreground hover:text-primary rounded-lg transition-all duration-300 cursor-default">Responsive Web Design</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-primary/20 text-muted-foreground hover:text-primary rounded-lg transition-all duration-300 cursor-default">Flexbox &amp; CSS Grid</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-primary/20 text-muted-foreground hover:text-primary rounded-lg transition-all duration-300 cursor-default">JavaScript (ES6)</span>
+              </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="glass-hover p-6 rounded-2xl border border-glass-border">
+              <div class="flex items-center gap-4 mb-5">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-white">
+                  <svg class="w-5 h-5 fill-none stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                </div>
+                <h3 class="text-lg font-semibold text-white">Tools &amp; Build Systems</h3>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-orange-500/20 text-muted-foreground hover:text-orange-400 rounded-lg transition-all duration-300 cursor-default">Maven</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-orange-500/20 text-muted-foreground hover:text-orange-400 rounded-lg transition-all duration-300 cursor-default">Postman</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-orange-500/20 text-muted-foreground hover:text-orange-400 rounded-lg transition-all duration-300 cursor-default">Swagger / OpenAPI</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-orange-500/20 text-muted-foreground hover:text-orange-400 rounded-lg transition-all duration-300 cursor-default">Git</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-orange-500/20 text-muted-foreground hover:text-orange-400 rounded-lg transition-all duration-300 cursor-default">GitHub</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-orange-500/20 text-muted-foreground hover:text-orange-400 rounded-lg transition-all duration-300 cursor-default">VS Code</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-orange-500/20 text-muted-foreground hover:text-orange-400 rounded-lg transition-all duration-300 cursor-default">Eclipse IDE</span>
+              </div>
+            </div>
+
+            <!-- AI Tools -->
+            <div class="glass-hover p-6 rounded-2xl border border-glass-border">
+              <div class="flex items-center gap-4 mb-5">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-500 to-fuchsia-500 flex items-center justify-center text-white">
+                  <!-- Sparkles Icon SVG -->
+                  <svg class="w-5 h-5 fill-none stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707-.707M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/>
+                  </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-white">AI-Assisted Workflow</h3>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-pink-500/20 text-muted-foreground hover:text-pink-400 rounded-lg transition-all duration-300 cursor-default">Claude</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-pink-500/20 text-muted-foreground hover:text-pink-400 rounded-lg transition-all duration-300 cursor-default">ChatGPT</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-pink-500/20 text-muted-foreground hover:text-pink-400 rounded-lg transition-all duration-300 cursor-default">Code Review</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-pink-500/20 text-muted-foreground hover:text-pink-400 rounded-lg transition-all duration-300 cursor-default">Debugging</span>
+                <span class="px-3 py-1.5 text-xs bg-muted/50 hover:bg-pink-500/20 text-muted-foreground hover:text-pink-400 rounded-lg transition-all duration-300 cursor-default">Documentation</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE SECTION -->
+      <section id="experience" class="py-20 lg:py-32 relative">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-white">Work Experience</h2>
+            <p class="text-muted-foreground mt-2 max-w-2xl mx-auto text-sm sm:text-base">
+              Hands-on engineering internships spanning Core Java, Spring Boot, REST APIs, and database-driven web applications
+            </p>
+            <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mt-4"></div>
+          </div>
+
+          <div class="max-w-3xl mx-auto relative pl-8 pb-10">
+            <!-- Central Timeline vertical line -->
+            <div class="absolute left-3 top-4 w-0.5 h-full bg-gradient-to-b from-primary to-secondary/20 pointer-events-none"></div>
+
+            <!-- Item 1: Tap Academy -->
+            <div class="relative pb-6">
+              <!-- Timeline Dot -->
+              <div class="absolute -left-8 top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-primary flex items-center justify-center timeline-dot"></div>
+              
+              <div class="glass-hover p-6 rounded-2xl ml-4">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-2">
+                  <h3 class="text-lg font-bold text-white">Software Developer Intern</h3>
+                  <span class="px-3 py-1 text-xs font-semibold bg-primary/10 text-primary rounded-full flex items-center gap-1">
+                    <!-- SVG Calendar -->
+                    <svg class="w-3 h-3 fill-none stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg> Dec 2025 – Aug 2026 &bull; Completed
+                  </span>
+                </div>
+                <h4 class="text-primary text-sm font-semibold mb-3">Tap Academy &bull; Bengaluru, India</h4>
+                
+                <ul class="space-y-2.5 text-muted-foreground text-sm list-disc pl-4 leading-relaxed">
+                  <li>Developed Java web applications using <strong class="text-white">Core Java, OOP, JDBC, Servlets, JSP and MySQL</strong>, applying MVC architecture and database connectivity.</li>
+                  <li>Practiced <strong class="text-white">Spring Boot, Spring MVC, Spring Data JPA and Hibernate</strong> to build REST APIs and database-driven applications.</li>
+                  <li>Applied <strong class="text-white">exception handling, input validation and debugging techniques</strong> to improve application reliability and maintainable code.</li>
+                  <li>Used <strong class="text-white">Maven, Git, GitHub, Postman and Swagger/OpenAPI</strong> for project management, version control, API testing.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURED PROJECTS SECTION -->
+      <section id="projects" class="py-20 lg:py-32 relative">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="text-center mb-12">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-white">Featured Projects</h2>
+            <p class="text-muted-foreground mt-2 max-w-2xl mx-auto text-sm sm:text-base">
+              Production-ready web applications and object-oriented software engineered with clean architectures
+            </p>
+            <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mt-4"></div>
+          </div>
+
+          <!-- Project Filter controls -->
+          <div class="flex flex-wrap justify-center gap-3 mb-12">
+            <button class="filter-btn px-5 py-2 text-sm font-medium rounded-lg transition-all duration-300 bg-gradient-to-r from-primary to-secondary text-white shadow-glow" data-filter="all">All Projects</button>
+            <button class="filter-btn px-5 py-2 text-sm font-medium rounded-lg transition-all duration-300 glass hover:border-primary/40 text-muted-foreground" data-filter="springboot">Spring Boot &amp; REST</button>
+            <button class="filter-btn px-5 py-2 text-sm font-medium rounded-lg transition-all duration-300 glass hover:border-primary/40 text-muted-foreground" data-filter="fullstack">Full-Stack Java</button>
+            <button class="filter-btn px-5 py-2 text-sm font-medium rounded-lg transition-all duration-300 glass hover:border-primary/40 text-muted-foreground" data-filter="java">Core Java &amp; OOP</button>
+          </div>
+
+          <!-- Project Cards grid -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            
+            <!-- Project 1: Job Portal Management System -->
+            <div class="project-card glass-hover p-6 rounded-2xl group relative overflow-hidden flex flex-col justify-between" data-category="springboot">
+              <div>
+                <div class="flex items-start justify-between mb-4">
+                  <!-- Category icon -->
+                  <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center text-primary">
+                    <i data-lucide="briefcase" class="w-6 h-6"></i>
+                  </div>
+                  <!-- GitHub link -->
+                  <a href="https://github.com/MukeswarReddyDev/Job-Portal-Management-System" target="_blank" rel="noopener noreferrer" class="p-2 text-muted-foreground hover:text-primary transition-colors duration-300 glass rounded-lg" title="View Source on GitHub" aria-label="GitHub Repository">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                      <path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/>
+                    </svg>
+                  </a>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-1.5 mb-3">
+                  <span class="px-2 py-0.5 text-xxs font-mono bg-primary/20 text-primary rounded">Spring Boot</span>
+                  <span class="px-2 py-0.5 text-xxs font-mono bg-secondary/20 text-secondary rounded">Spring Security</span>
+                  <span class="px-2 py-0.5 text-xxs font-mono bg-indigo-500/20 text-indigo-400 rounded">JWT</span>
+                  <span class="px-2 py-0.5 text-xxs font-mono bg-emerald-500/20 text-emerald-400 rounded">Spring Data JPA</span>
+                </div>
+
+                <h3 class="text-lg font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                  Job Portal Management System
+                </h3>
+                
+                <p class="text-xxs text-muted-foreground font-mono mb-3">
+                  Java 17, Spring Boot, Spring Data JPA, Hibernate, MySQL, Spring Security, JWT
+                </p>
+
+                <ul class="space-y-1.5 text-muted-foreground text-xs leading-relaxed mb-5 list-disc pl-4">
+                  <li>Developed a monolithic, layered <strong class="text-white">REST API application</strong> using Java and Spring Boot to manage job seekers, recruiters, job postings, and applications.</li>
+                  <li>Implemented user management, recruiter approval workflows, job posting management, and application status tracking with <strong class="text-white">role-specific functionality</strong>.</li>
+                  <li>Implemented API security using <strong class="text-white">Spring Security, JWT authentication</strong>, and role-based authorization for Admin, Recruiter, and Job Seeker.</li>
+                  <li>Built dynamic job search, filtering, and role-specific dashboard APIs.</li>
+                  <li>Integrated MySQL using <strong class="text-white">Spring Data JPA and Hibernate</strong>; tested and documented APIs using Postman.</li>
+                </ul>
+              </div>
+
+              <!-- Tech tags & action button -->
+              <div>
+                <div class="flex flex-wrap gap-1 pt-3 border-t border-glass-border mb-3">
+                  <span class="px-1.5 py-0.5 text-xxs font-mono bg-muted text-muted-foreground rounded">Java 17</span>
+                  <span class="px-1.5 py-0.5 text-xxs font-mono bg-muted text-muted-foreground rounded">Spring Boot</span>
+                  <span class="px-1.5 py-0.5 text-xxs font-mono bg-muted text-muted-foreground rounded">Hibernate</span>
+                  <span class="px-1.5 py-0.5 text-xxs font-mono bg-muted text-muted-foreground rounded">MySQL</span>
+                  <span class="px-1.5 py-0.5 text-xxs font-mono bg-muted text-muted-foreground rounded">Postman</span>
+                </div>
+                <a href="https://github.com/MukeswarReddyDev/Job-Portal-Management-System" target="_blank" rel="noopener noreferrer" class="w-full text-center py-2 px-3 text-xs font-medium rounded-lg bg-gradient-to-r from-primary to-secondary text-white hover-shadow-glow transition-all duration-300 flex items-center justify-center gap-2">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/>
+                  </svg>
+                  View on GitHub
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 2: FoodieHub Food Delivery App -->
+            <div class="project-card glass-hover p-6 rounded-2xl group relative overflow-hidden flex flex-col justify-between" data-category="fullstack">
+              <div>
+                <div class="flex items-start justify-between mb-4">
+                  <!-- Category icon -->
+                  <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/20 to-red-500/20 flex items-center justify-center text-orange-400">
+                    <i data-lucide="utensils" class="w-6 h-6"></i>
+                  </div>
+                  <!-- Action links (GitHub + Live Demo) -->
+                  <div class="flex items-center gap-2">
+                    <a href="https://github.com/MukeswarReddyDev/Food-Delivery-Project" target="_blank" rel="noopener noreferrer" class="p-2 text-muted-foreground hover:text-primary transition-colors duration-300 glass rounded-lg" title="View Source on GitHub" aria-label="GitHub Repository">
+                      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/>
+                      </svg>
+                    </a>
+                    <a href="https://mukeswarreddydev.github.io/Food-Delivery-Project/" target="_blank" rel="noopener noreferrer" class="p-2 text-muted-foreground hover:text-primary transition-colors duration-300 glass rounded-lg" title="Open Live Demo" aria-label="Live Demo">
+                      <svg class="w-5 h-5 fill-none stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-1.5 mb-3">
+                  <span class="px-2 py-0.5 text-xxs font-mono bg-primary/20 text-primary rounded">Java Servlets</span>
+                  <span class="px-2 py-0.5 text-xxs font-mono bg-secondary/20 text-secondary rounded">JSP &bull; MVC</span>
+                  <span class="px-2 py-0.5 text-xxs font-mono bg-emerald-500/20 text-emerald-400 rounded">JDBC &bull; MySQL</span>
+                </div>
+
+                <h3 class="text-lg font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                  FoodieHub — Food Delivery Web App
+                </h3>
+                
+                <p class="text-xxs text-muted-foreground font-mono mb-3">
+                  Technologies: Java, Java Servlets, JSP, JDBC, MySQL, HTML5, CSS3
+                </p>
+
+                <ul class="space-y-1.5 text-muted-foreground text-xs leading-relaxed mb-5 list-disc pl-4">
+                  <li>Developed a full-stack food delivery web application using <strong class="text-white">MVC architecture</strong>, with Servlets as controllers, JSP for views, and DAO for database operations.</li>
+                  <li>Implemented user registration, login, restaurant browsing, menu viewing, cart management, and order placement using <strong class="text-white">JDBC and MySQL</strong>.</li>
+                  <li>Designed a responsive, mobile-friendly interface using <strong class="text-white">HTML5, CSS3 and Flexbox</strong> for cross-device compatibility.</li>
+                </ul>
+              </div>
+
+              <!-- Tech tags & action buttons -->
+              <div>
+                <div class="flex flex-wrap gap-1 pt-3 border-t border-glass-border mb-3">
+                  <span class="px-1.5 py-0.5 text-xxs font-mono bg-muted text-muted-foreground rounded">Java</span>
+                  <span class="px-1.5 py-0.5 text-xxs font-mono bg-muted text-muted-foreground rounded">Servlets</span>
+                  <span class="px-1.5 py-0.5 text-xxs font-mono bg-muted text-muted-foreground rounded">JSP</span>
+                  <span class="px-1.5 py-0.5 text-xxs font-mono bg-muted text-muted-foreground rounded">JDBC</span>
+                  <span class="px-1.5 py-0.5 text-xxs font-mono bg-muted text-muted-foreground rounded">MySQL</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <a href="https://github.com/MukeswarReddyDev/Food-Delivery-Project" target="_blank" rel="noopener noreferrer" class="flex-1 text-center py-2 px-2 text-xs font-medium rounded-lg glass hover:bg-primary/20 hover:text-white text-muted-foreground transition-all duration-300">
+                    GitHub Code
+                  </a>
+                  <a href="https://mukeswarreddydev.github.io/Food-Delivery-Project/" target="_blank" rel="noopener noreferrer" class="flex-1 text-center py-2 px-2 text-xs font-medium rounded-lg bg-gradient-to-r from-primary to-secondary text-white hover-shadow-glow transition-all duration-300">
+                    Live Demo &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3: Student Management System -->
+            <div class="project-card glass-hover p-6 rounded-2xl group relative overflow-hidden flex flex-col justify-between" data-category="java">
+              <div>
+                <div class="flex items-start justify-between mb-4">
+                  <!-- Category icon -->
+                  <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-primary">
+                    <i data-lucide="database-backup" class="w-6 h-6"></i>
+                  </div>
+                  <!-- GitHub link -->
+                  <a href="https://github.com/MukeswarReddyDev/Student-Online-Management-System" target="_blank" rel="noopener noreferrer" class="p-2 text-muted-foreground hover:text-primary transition-colors duration-300 glass rounded-lg" title="View Source on GitHub" aria-label="GitHub Repository">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                      <path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/>
+                    </svg>
+                  </a>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-1.5 mb-3">
+                  <span class="px-2 py-0.5 text-xxs font-mono bg-primary/20 text-primary rounded">Core Java</span>
+                  <span class="px-2 py-0.5 text-xxs font-mono bg-secondary/20 text-secondary rounded">OOP Principles</span>
+                  <span class="px-2 py-0.5 text-xxs font-mono bg-purple-500/20 text-purple-400 rounded">Collections</span>
+                </div>
+
+                <h3 class="text-lg font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                  Student Management System
+                </h3>
+                
+                <p class="text-xxs text-muted-foreground font-mono mb-3">
+                  Technologies: Core Java, OOP, Collections
+                </p>
+
+                <ul class="space-y-1.5 text-muted-foreground text-xs leading-relaxed mb-5 list-disc pl-4">
+                  <li>Developed a console-based Student Management System using <strong class="text-white">Core Java, OOP principles and ArrayList</strong>.</li>
+                  <li>Implemented complete <strong class="text-white">CRUD operations</strong>, student search by ID, and duplicate ID validation checks.</li>
+                  <li>Applied robust exception handling and input validation routines ensuring reliable data execution.</li>
+                </ul>
+              </div>
+
+              <!-- Tech tags & action buttons -->
+              <div>
+                <div class="flex flex-wrap gap-1 pt-3 border-t border-glass-border mb-3">
+                  <span class="px-1.5 py-0.5 text-xxs font-mono bg-muted text-muted-foreground rounded">Core Java</span>
+                  <span class="px-1.5 py-0.5 text-xxs font-mono bg-muted text-muted-foreground rounded">OOP</span>
+                  <span class="px-1.5 py-0.5 text-xxs font-mono bg-muted text-muted-foreground rounded">ArrayList</span>
+                  <span class="px-1.5 py-0.5 text-xxs font-mono bg-muted text-muted-foreground rounded">CRUD</span>
+                </div>
+                <a href="https://github.com/MukeswarReddyDev/Student-Online-Management-System" target="_blank" rel="noopener noreferrer" class="w-full text-center py-2 px-3 text-xs font-medium rounded-lg glass hover:bg-primary/20 hover:text-white text-muted-foreground transition-all duration-300 flex items-center justify-center gap-2">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/>
+                  </svg>
+                  View on GitHub
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION SECTION -->
+      <section id="education" class="py-20 lg:py-32 relative">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-white">Education</h2>
+            <p class="text-muted-foreground mt-2 max-w-2xl mx-auto text-sm sm:text-base">
+              Academic background and engineering qualifications
+            </p>
+            <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mt-4"></div>
+          </div>
+
+          <div class="max-w-3xl mx-auto relative pl-8 pb-10">
+            <!-- Central Timeline vertical line -->
+            <div class="absolute left-3 top-4 w-0.5 h-full bg-gradient-to-b from-secondary to-primary/20 pointer-events-none"></div>
+
+            <!-- Item 1: B.Tech -->
+            <div class="relative pb-12">
+              <!-- Timeline Dot -->
+              <div class="absolute -left-8 top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-primary flex items-center justify-center timeline-dot"></div>
+              
+              <div class="glass-hover p-6 rounded-2xl ml-4">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-2">
+                  <span class="text-primary text-sm font-semibold uppercase tracking-wider">Sep 2023 – Apr 2026</span>
+                  <span class="text-xs text-muted-foreground">Tirupati, AP, India</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-1">B.Tech – Electronics &amp; Communication Engineering</h3>
+                <h4 class="text-secondary text-sm font-semibold mb-3">Chadalawada Ramanamma Engineering College, Tirupati</h4>
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-lg text-xs font-semibold mb-3">
+                  CGPA : 8.5
+                </div>
+                <p class="text-muted-foreground text-sm leading-relaxed">
+                  Pursuing Bachelor of Technology in Electronics &amp; Communication Engineering with consistent academic excellence (8.5 CGPA). Demonstrated national-level honors as an NPTEL Silver Medalist in ML &amp; IoT through IIT Madras.
+                </p>
+              </div>
+            </div>
+
+            <!-- Item 2: Diploma -->
+            <div class="relative pb-12">
+              <!-- Timeline Dot -->
+              <div class="absolute -left-8 top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-secondary flex items-center justify-center timeline-dot"></div>
+              
+              <div class="glass-hover p-6 rounded-2xl ml-4">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-2">
+                  <span class="text-primary text-sm font-semibold uppercase tracking-wider">Aug 2020 – Apr 2023</span>
+                  <span class="text-xs text-muted-foreground">Pulivendula, AP, India</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-1">Diploma – Electronics &amp; Communication Engineering</h3>
+                <h4 class="text-secondary text-sm font-semibold mb-3">Loyola Polytechnic College, Pulivendula</h4>
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary/15 text-secondary border border-secondary/20 rounded-lg text-xs font-semibold mb-3">
+                  Percentage: 94%
+                </div>
+                <p class="text-muted-foreground text-sm leading-relaxed">
+                  Completed Diploma in Electronics &amp; Communication Engineering securing 94% distinction. Built deep foundations in circuits, digital electronics, and problem-solving.
+                </p>
+              </div>
+            </div>
+
+            <!-- Item 3: SSC -->
+            <div class="relative">
+              <!-- Timeline Dot -->
+              <div class="absolute -left-8 top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-secondary flex items-center justify-center timeline-dot"></div>
+              
+              <div class="glass-hover p-6 rounded-2xl ml-4">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-2">
+                  <span class="text-primary text-sm font-semibold uppercase tracking-wider">June 2019 – Apr 2020</span>
+                  <span class="text-xs text-muted-foreground">Kadiri, AP, India</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-1">Secondary Education (SSC)</h3>
+                <h4 class="text-secondary text-sm font-semibold mb-3">Sree Valmeeki High School, Kadiri</h4>
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-green-500/10 text-green-400 border border-green-500/20 rounded-lg text-xs font-semibold mb-3">
+                  Percentage: 97.5%
+                </div>
+                <p class="text-muted-foreground text-sm leading-relaxed">
+                  Completed Secondary School Education with an outstanding academic score of 97.5%.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS & ACHIEVEMENTS SECTION -->
+      <section id="certifications" class="py-20 lg:py-32 relative">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-white">Certifications &amp; Achievements</h2>
+            <p class="text-muted-foreground mt-2 max-w-2xl mx-auto text-sm sm:text-base">
+              Recognized credentials and competitive accolades in software engineering and cloud computing
+            </p>
+            <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mt-4"></div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            
+            <!-- Certifications -->
+            <div class="glass p-6 sm:p-8 rounded-2xl border-gradient flex flex-col justify-between">
+              <div>
+                <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                  <i data-lucide="award" class="w-5 h-5 text-primary"></i> Professional Certifications
+                </h3>
+                
+                <ul class="space-y-5">
+                  <li class="flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center text-primary flex-shrink-0 mt-0.5">
+                      <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-white text-sm">Full Stack Web Development Certification</h4>
+                      <p class="text-xs text-primary font-medium">TAP Academy</p>
+                      <p class="text-xxs text-muted-foreground mt-0.5">Comprehensive hands-on training in Core Java, Spring Boot, Spring Data JPA, Hibernate, Servlets, JSP, JDBC, and MySQL.</p>
+                    </div>
+                  </li>
+
+                  <li class="flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-lg bg-blue-500/15 flex items-center justify-center text-blue-400 flex-shrink-0 mt-0.5">
+                      <i data-lucide="database" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-white text-sm">SQL Certification</h4>
+                      <p class="text-xs text-blue-400 font-medium">IBM</p>
+                      <p class="text-xxs text-muted-foreground mt-0.5">Relational database design, multi-table JOINs, subqueries, indexing, and query optimization.</p>
+                    </div>
+                  </li>
+                  
+                  <li class="flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-lg bg-secondary/15 flex items-center justify-center text-secondary flex-shrink-0 mt-0.5">
+                      <i data-lucide="medal" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-white text-sm">NPTEL Silver Medals — ML &amp; IoT</h4>
+                      <p class="text-xs text-secondary font-medium">IIT Madras &bull; National Level Competency</p>
+                      <p class="text-xxs text-muted-foreground mt-0.5">National-level Silver Medal honors in Machine Learning and Internet of Things (IoT) certification exams.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Achievements -->
+            <div class="glass p-6 sm:p-8 rounded-2xl border-gradient flex flex-col justify-between">
+              <div>
+                <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                  <i data-lucide="trophy" class="w-5 h-5 text-primary"></i> Key Achievements &amp; Leadership
+                </h3>
+                
+                <ul class="space-y-6">
+                  <li class="flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center text-primary flex-shrink-0 mt-0.5">
+                      <i data-lucide="award" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                      <div class="flex items-center gap-2 mb-1">
+                        <h4 class="font-semibold text-white text-sm">National NPTEL Silver Medalist</h4>
+                        <span class="px-2 py-0.5 text-xxs font-mono bg-primary/20 text-primary rounded">Top Tier</span>
+                      </div>
+                      <p class="text-xs text-muted-foreground leading-relaxed">
+                        Achieved Silver Medal distinction in both Machine Learning and Internet of Things (IoT) exams conducted by <strong class="text-white">IIT Madras</strong>, demonstrating rigorous analytical aptitude and high technical competence at the national level.
+                      </p>
+                    </div>
+                  </li>
+
+                  <li class="flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-lg bg-secondary/15 flex items-center justify-center text-secondary flex-shrink-0 mt-0.5">
+                      <i data-lucide="rocket" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                      <div class="flex items-center gap-2 mb-1">
+                        <h4 class="font-semibold text-white text-sm">Hackathon 2K26 Participant &amp; Finalist</h4>
+                        <span class="px-2 py-0.5 text-xxs font-mono bg-secondary/20 text-secondary rounded">Finalist</span>
+                      </div>
+                      <p class="text-xs text-muted-foreground leading-relaxed">
+                        Prototyped and delivered a full-stack software interface under tight constraints within a collaborative development environment, solving live problem statements through rapid development.
+                      </p>
+                    </div>
+                  </li>
+                  
+                  <li class="flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center text-accent flex-shrink-0 mt-0.5">
+                      <i data-lucide="users" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                      <div class="flex items-center gap-2 mb-1">
+                        <h4 class="font-semibold text-white text-sm">Department Cricket Team Captain</h4>
+                        <span class="px-2 py-0.5 text-xxs font-mono bg-accent/20 text-accent rounded">Leadership</span>
+                      </div>
+                      <p class="text-xs text-muted-foreground leading-relaxed">
+                        Led the department cricket team to championship success, demonstrating strategic coordination, communication, team leadership, and peak execution under pressure.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Quick highlight box -->
+              <div class="mt-6 p-4 rounded-xl bg-muted/30 border border-glass-border">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-lg bg-green-500/10 text-green-400 flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                  </div>
+                  <p class="text-xs text-muted-foreground">
+                    <strong class="text-white">Active Growth Mindset:</strong> Engineering robust Java web applications and scalable Spring Boot RESTful services with clean architecture and secure authentication.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="py-20 lg:py-32 relative overflow-hidden">
+        <!-- Glowing background behind contact -->
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5 pointer-events-none"></div>
+        
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+          
+          <!-- Open to Opportunities CTA Card -->
+          <div class="glass p-8 rounded-3xl border-gradient mb-16 max-w-5xl mx-auto relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10 group-hover:bg-primary/20 transition-colors duration-500"></div>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+              <div class="flex-1 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-green-500/10 text-green-400 rounded-full mb-3 text-xs font-semibold tracking-wide uppercase">
+                  <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                  Open to Opportunities
+                </div>
+                <h3 class="text-2xl sm:text-3xl font-black text-white mb-2">Let's Build Something Amazing Together</h3>
+                <p class="text-muted-foreground text-sm leading-relaxed max-w-2xl">
+                  I'm actively seeking opportunities to apply my skills and gain real-world experience in software development. Open to internships, entry-level roles, and collaborative projects where I can learn, contribute, and grow as a developer.
+                </p>
+              </div>
+              <div class="flex-shrink-0">
+                <a href="#contact-form" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-xl font-semibold hover-shadow-glow transition-all duration-300">
+                  <!-- SVG Send -->
+                  <svg class="w-4 h-4 fill-none stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                  </svg> Get In Touch
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mb-12">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-white">Get In Touch</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mt-4"></div>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            
+            <!-- Left Column: Contact Info Cards -->
+            <div class="glass p-6 sm:p-8 rounded-2xl flex flex-col justify-between">
+              <div>
+                <h3 class="text-xl font-semibold text-white mb-6">Contact Information</h3>
+                
+                <div class="space-y-6">
+                  <!-- Email Card (Click to Copy) -->
+                  <div class="flex items-center gap-4 p-4 rounded-xl hover:bg-muted/30 transition-all duration-300 group cursor-pointer relative" data-copy-value="bmukeswarreddy@gmail.com" data-copy-label="Email Copied!">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-primary group-hover:shadow-glow transition-all duration-300">
+                      <!-- SVG Mail -->
+                      <svg class="w-5 h-5 fill-none stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <span class="text-xs text-muted-foreground uppercase tracking-wider block mb-0.5">Email Me</span>
+                      <span class="font-bold text-white text-sm sm:text-base hover:text-primary transition-colors">bmukeswarreddy@gmail.com</span>
+                    </div>
+                    <span class="tooltip-text absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-black text-xs text-white rounded opacity-0 pointer-events-none transition-opacity duration-300 group-hover:opacity-100 whitespace-nowrap">Click to Copy</span>
+                  </div>
+
+                  <!-- Phone Card -->
+                  <div class="flex items-center gap-4 p-4 rounded-xl hover:bg-muted/30 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-primary group-hover:shadow-glow transition-all duration-300">
+                      <!-- SVG Phone -->
+                      <svg class="w-5 h-5 fill-none stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <span class="text-xs text-muted-foreground uppercase tracking-wider block mb-0.5">Call Me</span>
+                      <a href="tel:+919014181282" class="font-bold text-white text-sm sm:text-base hover:text-primary hover:underline transition-all">+91 9014181282</a>
+                    </div>
+                  </div>
+
+                  <!-- Location Card -->
+                  <div class="flex items-center gap-4 p-4 rounded-xl hover:bg-muted/30 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-primary group-hover:shadow-glow transition-all duration-300">
+                      <!-- SVG Map-pin -->
+                      <svg class="w-5 h-5 fill-none stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <span class="text-xs text-muted-foreground uppercase tracking-wider block mb-0.5">Location</span>
+                      <span class="font-bold text-white text-sm sm:text-base">Tirupati, Andhra Pradesh, India</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Socials icon row -->
+              <div class="pt-8 border-t border-glass-border mt-8">
+                <span class="text-xs text-muted-foreground uppercase tracking-wider block mb-4">Connect with me on Socials</span>
+                <div class="flex items-center gap-4">
+                  <!-- GitHub -->
+                  <a href="https://github.com/MukeswarReddyDev" target="_blank" rel="noopener noreferrer" class="p-3 glass-hover rounded-xl hover:shadow-glow transition-all duration-300 group" aria-label="GitHub">
+                    <svg class="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/>
+                    </svg>
+                  </a>
+                  
+                  <!-- LinkedIn -->
+                  <a href="https://www.linkedin.com/in/bandlapalli-mukeswar-reddy" target="_blank" rel="noopener noreferrer" class="p-3 glass-hover rounded-xl hover:shadow-glow transition-all duration-300 group" aria-label="LinkedIn">
+                    <svg class="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </a>
+
+                  <!-- Gmail -->
+                  <a href="mailto:bmukeswarreddy@gmail.com" class="p-3 glass-hover rounded-xl hover:shadow-glow transition-all duration-300 group" aria-label="Gmail">
+                    <svg class="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M24 5.457v13.909c0 .904-.732 1.634-1.636 1.634h-3.818V11.73L12 16.64l-6.545-4.91v9.27H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-1.356 1.478-2.194 2.619-1.455l9.381 6.25 9.381-6.25c1.14-.739 2.619.099 2.619 1.455z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Contact Message Form -->
+            <div class="glass p-6 sm:p-8 rounded-2xl border-gradient">
+              <h3 class="text-xl font-semibold text-white mb-6">Send a Message</h3>
+              
+              <form id="contact-form" class="space-y-5">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-muted-foreground mb-2">Your Name</label>
+                  <input type="text" id="name" required class="w-full px-4 py-3 bg-muted/30 border border-glass-border rounded-xl text-white placeholder-muted-foreground focus:outline-none focus:border-primary transition-all duration-300 input-glow" placeholder="John Doe" />
+                </div>
+
+                <div>
+                  <label for="email" class="block text-sm font-medium text-muted-foreground mb-2">Your Email</label>
+                  <input type="email" id="email" required class="w-full px-4 py-3 bg-muted/30 border border-glass-border rounded-xl text-white placeholder-muted-foreground focus:outline-none focus:border-primary transition-all duration-300 input-glow" placeholder="john@example.com" />
+                </div>
+
+                <div>
+                  <label for="message" class="block text-sm font-medium text-muted-foreground mb-2">Your Message</label>
+                  <textarea id="message" rows="4" required class="w-full px-4 py-3 bg-muted/30 border border-glass-border rounded-xl text-white placeholder-muted-foreground focus:outline-none focus:border-primary transition-all duration-300 input-glow" placeholder="Hi Mukeswar, I'd like to talk about..."></textarea>
+                </div>
+
+                <button type="submit" class="w-full flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-primary to-secondary text-white rounded-xl font-semibold hover-shadow-glow transition-all duration-300 disabled:opacity-75 disabled:cursor-not-allowed">
+                  <i data-lucide="send" class="w-5 h-5"></i> Send Message
+                </button>
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-glass-border bg-slate-950/80 py-10 relative z-10">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="text-center md:text-left">
+            <h5 class="text-lg font-bold gradient-text mb-1 tracking-wider uppercase">Mukeswar Reddy</h5>
+            <p class="text-xs text-muted-foreground">Java Full Stack Developer</p>
+          </div>
+          
+          <div class="text-center md:text-right">
+            <p class="text-xs text-muted-foreground">
+              &copy; 2026 Mukeswar Reddy Bandlapalli. All rights reserved.
+            </p>
+            <p class="text-xxs text-muted-foreground/60 mt-1 flex items-center justify-center md:justify-end gap-1">
+              Made by <span class="text-red-500">❤️</span> Mukeswar Reddy
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Toast Notification (Success) -->
+    <div id="toast-success" class="hidden fixed bottom-6 right-6 z-50 flex items-center gap-3 px-5 py-4 bg-slate-900 border border-green-500/40 text-green-400 rounded-xl shadow-glow-lg max-w-sm">
+      <div class="w-8 h-8 rounded-full bg-green-500/15 flex items-center justify-center flex-shrink-0 text-green-400">
+        <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+      </div>
+      <div>
+        <h6 class="font-bold text-sm text-white">Message Sent!</h6>
+        <p class="text-xs text-muted-foreground mt-0.5">Your message has been delivered successfully.</p>
+      </div>
+    </div>
+
+    <!-- Toast Notification (Error) -->
+    <div id="toast-error" class="hidden fixed bottom-6 right-6 z-50 flex items-center gap-3 px-5 py-4 bg-slate-900 border border-red-500/40 text-red-400 rounded-xl shadow-glow-lg max-w-sm">
+      <div class="w-8 h-8 rounded-full bg-red-500/15 flex items-center justify-center flex-shrink-0 text-red-400">
+        <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+      </div>
+      <div>
+        <h6 class="font-bold text-sm text-white">Failed to Send!</h6>
+        <p class="text-xs text-muted-foreground mt-0.5">Please check your inputs and try again.</p>
+      </div>
+    </div>
+
+    <!-- Init Lucide Icons & Portfolio Logic -->
+    <script src="script.js"></script>
+    <script>
+      // Initialize Lucide icons on load
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
